@@ -1,6 +1,6 @@
 import multiprocessing
 import datetime
-from measurement_scheduling_tools import datetime_range, present, next_occurrence
+from tud_pv_monitoring.measurement_scheduling_tools import datetime_range, present, next_occurrence
 import json
 from tud_pv_monitoring.database import daily_loop, update_loop
 from tud_pv_monitoring.measurements.opet_supervisor_tools import measurement_loop, writer_loop
@@ -21,7 +21,7 @@ SCHEDULE_HORIZON = 32  # s
 # The schedule is updated this often
 SCHEDULE_INTERVAL = 30  # s
 #Maximum time a job may exist
-MAX_JOB_TIME = MAXIMUM_JOB_AGE = datetime.timedelta(minutes=5)
+MAX_JOB_TIME = datetime.timedelta(minutes=5)
 
 TZ_LOCAL = ZoneInfo("Europe/Amsterdam")
 
