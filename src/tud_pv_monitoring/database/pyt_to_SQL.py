@@ -121,7 +121,7 @@ def update_loop():
             logger.debug(f"Succesfully updated the weather_id")
         except Exception as e:
             logger.error(f"Weather_id could not be updated. Error {e}")
-        time.sleep(10) # Wait for an 10s and check again.
+        time.sleep(1) # Wait for an 10s and check again.
     db_close(conn)
 
 
