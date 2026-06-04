@@ -109,7 +109,7 @@ Here are some high-level descriptions of each document. To fully understand the 
         <ul>
             <li>module_name (string)(This one needs to be unique for every different module, and it must be filled in; otherwise, the system will not work.</li>
             <li>mounted_on (string)</li>
-            <li>tracer (string)</li>
+            <li>tracer (string) (can be changed later)</li>
             <li>interval_point (seconds)(int)</li>
             <li>interval_curve (seconds)(int)</li>
             <li>username (string) (can be changed later)</li>
@@ -158,7 +158,7 @@ This folder contains documents that help the operation of the <code>TUD-opet-sup
     <p>
       This document contains all the operations that update the PostgreSQL database. <br><br>
       Firstly, to do any operations with the database, a connection needs to be made. This is done using <code>init()</code>. After using the program, it needs to be shut down <code>db_close(conn)</code> <br>
-      It contains the looping functions such as: <code>daily_loop()</code> and <code>update_loop()</code>. It also contains the mechanism to add the collected data to all the tables: <code>add_data(...)</code>, <code>add_module_data(...)</code>, <code>add_weather_data(...)</code>, <code>past_data_upload(...)</code>. <br> <code>past_data_upload(...)</code> uploads the data from the past; it looks back a certain number of days. How many days you want it to look back can be configured in the `measurement_config.json`. The default is 7 days. <br>
+      It contains the looping functions such as: <code>daily_loop()</code> and <code>update_loop()</code>. It also contains the mechanism to add the collected data to all the tables: <code>add_data(...)</code>, <code>add_module_data(...)</code>, <code>add_weather_data(...)</code>, <code>past_data_upload(...)</code>, and <code>update_weather_id()</code>. <br> <code>past_data_upload(...)</code> uploads the data from the past; it looks back a certain number of days. How many days you want it to look back can be configured in the `measurement_config.json`. The default is 7 days. <br>
       The folder also contains an error detection service <code>error_detect(...)</code> that can detect whether any information has been received in the past 24 hours for the entire database or per solar module. It also collects the number of status_integer errors relative to the total amount of measurements for each module in the past 24 hours for the point measurements. It sends an email <code>send_mail(...)</code> to the admins and owner of the solar module when a problem has been detected. <br>
       This also contains multiple programs to print, check, or delete the tables, but this is meant for debugging purposes. <br>
       Lastly and most importantly for most users, it contains the function <code>download_table(...)</code>. This function can be used to extract measurements between 2 dates for multiple solar modules at once. 
