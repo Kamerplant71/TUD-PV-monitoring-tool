@@ -97,7 +97,6 @@ def update_loop():
     conn, cur, mysql_conn, mysql_cur= init()
     while(1):
         config, data_path_base = loadconfig()
-        #print(str(datetime.date.today()))
         date = str(datetime.date.today())
         try:
             add_data(date, conn, cur ,mysql_conn , mysql_cur, config, data_path_base)
@@ -165,7 +164,7 @@ def past_data_upload(conn, cur, mysql_conn, mysql_cur, config, data_path_base):
     start_date = datetime.date.today()-datetime.timedelta(days=config.get('lookback', 7))
     try:    
         add_weather_data(weather_all(start_date, mysql_conn, mysql_cur), conn, cur)
-        logger.debug("Weather data succesfully uploaded")
+        logger.debug("Past weather data succesfully uploaded")
     except Exception as e:
         print('Could not add the weather data')
         logger.error(f"Weather data could not be added. Error: {e}")
@@ -217,20 +216,12 @@ def add_data(date, conn, cur, mysql_conn, mysql_cur, config, data_path_base):
     )
     df = pd.read_csv(data_file_path, delimiter=",")
     
-    # Add weather_id column with None values, this is done because the weather data is not always available, so the weather_id will be added later when the weather data is available, .
+    # Add weather_id column with None values, this is done because the weather data is not always available, 
+    # so the weather_id will be added later when the weather data is available, .
     # By adding the column with None values, the data can still be added to the database without having to worry about missing weather data.
     df['weather_id'] = None 
     df['date_time']=pd.to_datetime(df['date_time'])
     df['scheduled_time'] = pd.to_datetime(df['scheduled_time'])    
-    # try:
-    #     newest = weather_last(mysql_conn, mysql_cur)
-    #     UTC_PLUS_2 = datetime.timezone(datetime.timedelta(hours=2))
-    #     newest_time = pd.to_datetime(newest[1]).replace(tzinfo=UTC_PLUS_2)
-    #     if (df['date_time'] < newest_time + datetime.timedelta(minutes=5)).any():   #Only add data when there is a weather id from the previous 5 minutes.
-    #         df['weather_id']=newest[0]
-    # except:
-    #     print('weather_id could not be linked')
-    #     conn.rollback()
     
     # Insert the point data into the database
     data = df.to_numpy()
@@ -260,20 +251,10 @@ def add_data(date, conn, cur, mysql_conn, mysql_cur, config, data_path_base):
     df["v"] = df["v"].apply(ast.literal_eval)
     df['i'] = df['i'].apply(ast.literal_eval)
     
-    #Assigning weather_id to the last weather measurement in the last 5 minutes.
+    #Assigning weather_id None
     df['weather_id'] = None
     df['date_time']=pd.to_datetime(df['date_time'])
     df['scheduled_time'] = pd.to_datetime(df['scheduled_time'])    
-    # try:
-    #     newest = weather_last(mysql_conn, mysql_cur)
-    #     #TODO Needs to change to adaptive system
-    #     UTC_PLUS_2 = datetime.timezone(datetime.timedelta(hours=2))
-    #     newest_time = pd.to_datetime(newest[1]).replace(tzinfo=UTC_PLUS_2)
-    #     if (df['date_time'] < newest_time + datetime.timedelta(minutes=5)).any():   
-    #         df['weather_id']=newest[0]
-    # except:
-    #     print('weather_id could not be linked')
-    #     conn.rollback()
     
     # Insert the curve data into the database
     data = df.to_numpy()
@@ -395,6 +376,18 @@ def update_weather_id(date, conn, cur):
 
 
 def weather_sync(opet_date_time, conn, cursor):
+    """ This function returns a weather id that is within a 5 minute range of a OPET data measurement. 
+        If no weather measurement is within that timespan a 0 is returned.
+
+    Args:
+        opet_date_time (_datetime_): The date and time of the OPET measurement for which the weather_id has to be found. This should be a timezone aware datetime in the timezone of Europe/Amsterdam.
+        conn (_type_): The connection to the PostgreSQL database
+        cursor (_type_): The cursor for the PostgreSQL database
+
+    Returns:
+        _int_: The weather_id that is within a 5 minute range. 0 if no weather measurement is within that timespan.
+    """
+    
     cursor.execute("SELECT weather_id, weather_time FROM weather ORDER BY ABS(EXTRACT(EPOCH FROM (weather_time - %s))) ASC limit 1", (opet_date_time,))
     data = cursor.fetchone()
     data = np.array(data)
@@ -481,7 +474,6 @@ def create_table(type, conn, cur):
             constraint fk_module FOREIGN KEY (module_name) REFERENCES modules(module_name),
             UNIQUE (date_time, module_name))"""
             #   constraint for the module_name means that module_name must be present in the modules table to be able to add data.
-            #   constraint fk_weather FOREIGN KEY (weather_id) REFERENCES weather(weather_id), 
     if type == "pv_curve_test":
         command = """CREATE TABLE pv_curve_test(
             date_time TIMESTAMP WITH TIME ZONE,
@@ -498,7 +490,6 @@ def create_table(type, conn, cur):
             weather_id int,
             constraint fk_module FOREIGN KEY (module_name) REFERENCES modules(module_name),
             UNIQUE (date_time, module_name))"""
-            #  constraint fk_weather FOREIGN KEY (weather_id) REFERENCES pv_Weather(weather_id),
     if type == "pv_point_test":
         command = """CREATE TABLE pv_point_test(
             date_time TIMESTAMP WITH TIME ZONE,
@@ -571,10 +562,10 @@ def download_table(file, type, datetime1, datetime2, module_name, conn, cur):
     """This function gives the ability to download the data from the database with filters over time and over modules.
 
     Args:
-        file (csv): 'file_name.csv'
+        file (CSV): 'file_name.csv'
         type (string): Measurement type: 'pv_point' or 'pv_curve'.
-        datetime1 (string): start datetime in string, example: "2024-12-20 16:00:50-07:00".
-        datetime2 (string): end datetime in string, example: "2026-12-20 16:00:50-07:00".
+        datetime1 (string): start datetime in string, example: "2024-12-20 16:00:50+02:00".
+        datetime2 (string): end datetime in string, example: "2026-12-20 16:00:50+02:00".
         module_name (list): List of the modules selected.
         conn (_type_): Connection to the PostgreSQL database.
         cur (_type_): cursor for the PostgreSQL database.
@@ -589,10 +580,6 @@ def download_table(file, type, datetime1, datetime2, module_name, conn, cur):
     df = pd.read_csv(file)
     df['scheduled_time'] = pd.to_datetime(df['scheduled_time'])
     df.drop('weather_id.1', axis=1, inplace=True) # Drop the double weahter_id column
-    #print(df['scheduled_time'])
-    #print(datetime.datetime.fromisoformat(datetime1))
-    # print(df.dtypes)
-    #result = df.loc[(df['scheduled_time'] >= str(datetime.datetime.fromisoformat(datetime1))) & (df["scheduled_time"]<= str(datetime.datetime.fromisoformat(datetime2)))]
     result = df.loc[(df['module_name'].isin(module_name))]
     print(result)
     result.to_csv(file, index=False)

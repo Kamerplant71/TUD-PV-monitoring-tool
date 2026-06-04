@@ -73,17 +73,6 @@ def weather_all(startdate, conn, cursor):
     data = cursor.fetchall()
     return data
 
-# def weather_sync(opet_date_time, conn, cursor):
-#     cursor.execute("SELECT idWeather, RecTime FROM weather ORDER BY ABS(TIMESTAMPDIFF(SECOND, RecTime, %s)) ASC limit 1", (opet_date_time,))
-#     data = cursor.fetchone()
-#     data = np.array(data)
-#     data[1]=data[1].replace(tzinfo=ZoneInfo('Europe/Amsterdam'))
-#     if abs(opet_date_time-data[1])  < datetime.timedelta(minutes = 5):
-#         weatherid=data[0]
-#     else:
-#         weatherid= 0 
-        
-#     return weatherid
     
 def mysql_close(conn):
     conn.close()

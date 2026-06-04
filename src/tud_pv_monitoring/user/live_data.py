@@ -1,8 +1,3 @@
-from matplotlib.animation import FuncAnimation
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import zoneinfo
-import datetime
 from tud_pv_monitoring.database import init, db_close
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -11,6 +6,10 @@ import zoneinfo
 import datetime
 import matplotlib
 
+""" Running this document will give you a live graph of the voltage and current of specified module. 
+Change the module_name to change which module get plotted.
+"""
+module_name = "My_solar_panel_1"
 
 def last_measurement(conn, cur , module_name):
     cur.execute("SELECT * FROM pv_point WHERE module_name=%s ORDER BY date_time DESC LIMIT 1" , (module_name,))
@@ -50,7 +49,7 @@ labels = [l.get_label() for l in lines]
 ax1.legend(lines, labels, loc='upper left')
 
 def update(frame):
-    measurement = last_measurement(conn, cur, 'My_solar_panel_1')
+    measurement = last_measurement(conn, cur, module_name)
 
     times.append(measurement[0])      # datetime object
     voltages.append(measurement[4])   # voltage

@@ -25,10 +25,6 @@ def download_table(file, type, datetime1, datetime2, module_name, conn, cur):
     df = pd.read_csv(file)
     df['scheduled_time'] = pd.to_datetime(df['scheduled_time'])
     df.drop('weather_id.1', axis=1, inplace=True) # Drop the double weahter_id column
-    #print(df['scheduled_time'])
-    #print(datetime.datetime.fromisoformat(datetime1))
-    # print(df.dtypes)
-    #result = df.loc[(df['scheduled_time'] >= str(datetime.datetime.fromisoformat(datetime1))) & (df["scheduled_time"]<= str(datetime.datetime.fromisoformat(datetime2)))]
     result = df.loc[(df['module_name'].isin(module_name))]
     print(result)
     result.to_csv(file, index=False)
