@@ -65,7 +65,9 @@ For remote access, you may want to make an additional user and grant them access
 For the error detection service to work and to actually send an email, you will need to set up your SMTP email address. In the function `send_mail(...)` in `pyt_to_SQL.py`, the email address, SMTP server, port, and app password need to be configured. 
 
 The next step is to configure the JSON files properly. To see this, open the foldable example-config-test under the header [File descriptions](#file-descriptions). 
-When you have completed all previous steps, you can start using the database by running 'TUD-opet-supervisor.py'.
+When you have completed all previous steps, you can start using the database by running 'TUD-opet-supervisor.py'. 
+>[!TIP]
+>To make the program run on startup, create a .bat file including the path to `python.exe` and a path to `supervisor.py`. Make sure the .bat file is in the TUD-PV-monitoring-tool folder. Create a shortcut to the .bat file and put it in the common startup folder. This folder can be found by pressing '🪟' + 'R'. Then filling in 'shell:common startup'.
 
 >[!IMPORTANT]
 > The entire script is made for the timezone in 'Europe/Amsterdam'. So if you are using this program in a different timezone, you need to very carefully adapt the timezones in the code.
@@ -73,6 +75,8 @@ When you have completed all previous steps, you can start using the database by 
 ## Users
 In order to use the database, you first need to add your solar module to `measurement_config.json`. This is done on the computer that runs the database! So first, you install the solar module you want to start measuring, and then you add it to the measurement config file. You must do this securely and make sure to take a look at the example. Once the data is set, it gets uploaded to the database, and once it has been uploaded, you cannot change the data except for the tracer, username, and the user_email. See in the file the description of the config for more details.
 If you want to stop a measurement, you either need to set disabled to TRUE in the `measurement_config.json` or just completely remove the module from that file.
+>[!TIP]
+>When filling in the `measurement_config.json`, make sure that autosave is disabled. Otherwise, some data may be uploaded too quickly to the database.
 
 To access the database from your local computer, you need to make sure that the function `init()` contains the correct IP address of the machine. You also need to know the name of the database, your username, your password, and the port through which it is accessible.  
 
