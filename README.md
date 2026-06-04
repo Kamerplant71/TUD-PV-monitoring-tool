@@ -87,7 +87,7 @@ Data can be extracted using `download.py`, which can be found in the user_tools.
 Here are some high-level descriptions of each document. To fully understand the code, you will have to look into the Python file for more specific explanations. 
 
 <details>
-    <summary><b>TUD_opet_supervisor.py</b></summary>
+    <summary><b>supervisor.py</b></summary>
     <p>This document is the heart of the operation. It schedules functions in the code. It plans the measurements and plans the updates of the database.</p>
 </details>
 
@@ -130,7 +130,7 @@ Here are some high-level descriptions of each document. To fully understand the 
 </details>
 
 <details>
-    <summary><b>OPET_control</b></summary>
+    <summary><b>TUD-OPET-control</b></summary>
     <p>This folder contains the <code>OPET_control.py</code>. This piece of code acts as the translation layer between the OPETs and the <code>TUD-opet-supervisor.py</code>. This control mechanism is pulled from <a href='https://github.com/NatLabRockies/opet-control?tab=readme-ov-file'>opet-control</a>. We have made some slight changes, but it is mostly the same. Here is our <a href='https://github.com/Kamerplant71/TUD-opet-control'>fork</a> The most important addition is that we also measure the solar cell temperature. To get further insight into how this translation layer works, look into <a href='https://github.com/NatLabRockies/opet-firmware'>opet-firmware</a>.
     </p>
 </details>
@@ -144,7 +144,7 @@ Here are some high-level descriptions of each document. To fully understand the 
     </p>
 </details>
 
-### supervisor_tools
+### Database and Measurement tools
 This folder contains documents that help the operation of the <code>TUD-opet-supervisor.py</code>
 <details>
     <summary><b>supervisor_tools.py</b></summary> 
