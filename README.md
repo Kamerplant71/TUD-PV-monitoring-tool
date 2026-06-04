@@ -106,8 +106,8 @@ Here are some high-level descriptions of each document. To fully understand the 
             <li>module_name (string)(This one needs to be unique for every different module, and it must be filled in; otherwise, the system will not work.</li>
             <li>mounted_on (string)</li>
             <li>tracer (string)</li>
-            <li>interval_point (int)</li>
-            <li>interval_curve (int)</li>
+            <li>interval_point (seconds)(int)</li>
+            <li>interval_curve (seconds)(int)</li>
             <li>username (string) (can be changed later)</li>
             <li>user_email (string) (can be changed later)</li>
             <li>area ($m^2$) (float) (cannot be changed later)</li>
@@ -115,7 +115,7 @@ Here are some high-level descriptions of each document. To fully understand the 
             <li>manufacturer (string) (cannot be changed later)</li>
             <li>disabled (boolean)</li>
             <li>stopdate ('yyyy-mm-dd' or Null)</li>
-            <li>load_mode (string)</li>
+            <li>load_mode (string) ('mppt', 'voc', 'isc')</li>
         </ul>
         Also, the mounted mechanisms have to be set up. The name of the mounting is the selector in which the <code>axis_azimuth</code> and the <code>axis_tilt</code> are stored for each mounting.
         The <code>data_destination</code> has to be configured. This is where the output of the OPET measurements gets stored. <br>
