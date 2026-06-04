@@ -147,7 +147,7 @@ def measurement_loop(bus, jobs, jobs_in_progress, results, bus_info, load_info, 
                 # Set load mode, also enable output if disable is false
                 if job['job_type'] == 'set_load_mode':
                     # mppt
-                    if job["load_mode"] == 'mpp':
+                    if job["load_mode"] == 'mppt':
                         try:
                             opets[job['opet_address']].mode = 'mppt'
                             opets[job['opet_address']].output_enabled = True

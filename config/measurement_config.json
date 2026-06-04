@@ -14,7 +14,7 @@
       "manufacturer": "Longli",
       "disabled": false,
       "stopdate": null,
-      "load_mode": "mpp"
+      "load_mode": "mppt"
     }
   ],
 
