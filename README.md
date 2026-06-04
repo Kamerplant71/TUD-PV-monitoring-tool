@@ -14,7 +14,7 @@ The database contains 4 tables: 'pv_point', 'pv_curve', 'weather', and 'modules'
 > [!Warning]
 >  Only the 'module_name' field of the `measurement_config.json` must be filled in; otherwise, the system will break down. It is very much recommended to fill in all possible settings in the `measurement_config.json`.
 
-![database](images/Database_structure.svg)
+![database](images/DB_structure.png)
 
 ## Setup
 Things that need to be installed on the server to run the system:
