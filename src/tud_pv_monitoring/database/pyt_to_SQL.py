@@ -33,9 +33,9 @@ def init():
     config, data_path_base = loadconfig()
     # Make connection with the PostgreSQL database.
     DB_NAME = "postgres"
-    DB_USER = "postgres"
-    DB_PASS = "1234"
-    DB_HOST = "localhost"
+    DB_USER = "postgress" # or remote 
+    DB_PASS = "1234" # or npjust
+    DB_HOST = "localhost" # or correct IP
     DB_PORT = "5432"
     try:
         conn = psycopg2.connect(database=DB_NAME,

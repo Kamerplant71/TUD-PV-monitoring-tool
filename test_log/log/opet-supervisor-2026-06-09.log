@@ -1,0 +1,400 @@
+2026-06-09 14:13:47,370 DEBUG opet-supervisor started
+2026-06-09 14:13:49,486 DEBUG opet-supervisor started
+2026-06-09 14:13:49,689 DEBUG manager: 0 (set_load_mode: mppt) scheduled for 2026-06-09 14:13:52.688167+02:00
+2026-06-09 14:13:49,689 DEBUG manager: 1 (set_load_mode: mppt) scheduled for 2026-06-09 14:13:52.689180+02:00
+2026-06-09 14:13:49,689 DEBUG manager: 2 (point) scheduled for 2026-06-09 14:14:00+02:00
+2026-06-09 14:13:49,690 DEBUG manager: 3 (point) scheduled for 2026-06-09 14:14:10+02:00
+2026-06-09 14:13:49,690 DEBUG manager: 4 (point) scheduled for 2026-06-09 14:14:20+02:00
+2026-06-09 14:13:49,691 DEBUG manager: 5 (curve) scheduled for 2026-06-09 14:14:00+02:00
+2026-06-09 14:13:49,691 DEBUG manager: 6 (point) scheduled for 2026-06-09 14:14:00+02:00
+2026-06-09 14:13:49,691 DEBUG manager: 7 (point) scheduled for 2026-06-09 14:14:10+02:00
+2026-06-09 14:13:49,693 DEBUG manager: 8 (point) scheduled for 2026-06-09 14:14:20+02:00
+2026-06-09 14:13:49,693 DEBUG manager: 9 (curve) scheduled for 2026-06-09 14:14:00+02:00
+2026-06-09 14:13:49,694 DEBUG manager: 10 jobs are scheduled
+2026-06-09 14:13:49,694 DEBUG manager: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+2026-06-09 14:13:51,371 DEBUG opet-supervisor started
+2026-06-09 14:13:51,384 DEBUG opet-supervisor started
+2026-06-09 14:13:51,386 DEBUG opet-supervisor started
+2026-06-09 14:13:51,419 DEBUG opet-supervisor started
+2026-06-09 14:13:51,630 DEBUG Database connected succesfully
+2026-06-09 14:13:51,701 DEBUG Building SSL context
+2026-06-09 14:13:51,701 DEBUG Building SSL context
+2026-06-09 14:13:51,811 DEBUG Switching to SSL
+2026-06-09 14:13:51,818 DEBUG Switching to SSL
+2026-06-09 14:13:51,845 DEBUG SSL has been enabled
+2026-06-09 14:13:51,845 DEBUG Starting authorization phase
+2026-06-09 14:13:51,845 DEBUG The provided initial strategy is mysql_native_password
+2026-06-09 14:13:51,846 INFO package: mysql.connector.plugins
+2026-06-09 14:13:51,846 INFO plugin_name: mysql_native_password
+2026-06-09 14:13:51,857 DEBUG SSL has been enabled
+2026-06-09 14:13:51,857 INFO AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2026-06-09 14:13:51,857 DEBUG Starting authorization phase
+2026-06-09 14:13:51,857 DEBUG The provided initial strategy is mysql_native_password
+2026-06-09 14:13:51,857 INFO package: mysql.connector.plugins
+2026-06-09 14:13:51,857 INFO plugin_name: mysql_native_password
+2026-06-09 14:13:51,859 INFO AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2026-06-09 14:13:51,867 DEBUG mysql_native_password completed succesfully
+2026-06-09 14:13:51,887 DEBUG Weather database succesfully connected
+2026-06-09 14:13:51,887 DEBUG Weather database succesfully connected
+2026-06-09 14:13:51,942 DEBUG Duplicate module_name
+2026-06-09 14:13:51,998 DEBUG Duplicate module_name
+2026-06-09 14:13:52,001 ERROR Data could not be added, maybe the file is not yet created or there is an error: [Errno 2] No such file or directory: 'test_log\\data\\2026-06-09\\config_2026-04-30T15-00-00\\opet_results_point_2026-06-09.csv'
+2026-06-09 14:13:59,584 DEBUG Weather data succesfully added
+2026-06-09 14:13:59,627 DEBUG Succesfully updated the weather_id
+2026-06-09 14:14:00,012 DEBUG manager: 10 (set_load_mode: mppt) scheduled for 2026-06-09 14:14:03.011100+02:00
+2026-06-09 14:14:00,013 DEBUG manager: 11 (set_load_mode: mppt) scheduled for 2026-06-09 14:14:03.012136+02:00
+2026-06-09 14:14:00,014 DEBUG manager: 12 (point) scheduled for 2026-06-09 14:14:30+02:00
+2026-06-09 14:14:00,014 DEBUG manager: 13 (point) scheduled for 2026-06-09 14:14:30+02:00
+2026-06-09 14:14:00,015 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:14:00,015 DEBUG manager: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+2026-06-09 14:14:00,040 DEBUG bus a: job 2: (-0.00033138, 8.1753e-07), 0:00:00.040498 late
+2026-06-09 14:14:00,053 DEBUG bus a: job 5: curve measurement (start) 5, 0:00:00.053774 late
+2026-06-09 14:14:00,081 DEBUG bus a: job 6: (-0.000176004, 2.08591e-05), 0:00:00.081077 late
+2026-06-09 14:14:00,096 DEBUG bus a: job 9: curve measurement (start) 9, 0:00:00.094872 late
+2026-06-09 14:14:02,255 DEBUG bus a: job 5: curve measurement (complete) 0:00:02.255443 late
+2026-06-09 14:14:03,111 DEBUG bus a: job 11: delayed because O002 is not available
+2026-06-09 14:14:03,137 DEBUG bus a: job 11: delayed because O002 is not available
+2026-06-09 14:14:03,153 DEBUG bus a: job 11: delayed because O002 is not available
+2026-06-09 14:14:03,170 DEBUG bus a: job 11: delayed because O002 is not available
+2026-06-09 14:14:03,301 DEBUG bus a: job 9: curve measurement (complete) 0:00:03.301721 late
+2026-06-09 14:14:09,648 DEBUG Duplicate module_name
+2026-06-09 14:14:09,664 DEBUG Duplicate module_name
+2026-06-09 14:14:10,029 DEBUG bus a: job 3: (-0.000329659, 8.16302e-07), 0:00:00.029074 late
+2026-06-09 14:14:10,058 DEBUG bus a: job 7: (-0.00012513, 2.06188e-05), 0:00:00.058120 late
+2026-06-09 14:14:16,291 DEBUG Weather data succesfully added
+2026-06-09 14:14:16,324 DEBUG Succesfully updated the weather_id
+2026-06-09 14:14:20,040 DEBUG bus a: job 4: (-0.000305938, 8.16236e-07), 0:00:00.040983 late
+2026-06-09 14:14:20,066 DEBUG bus a: job 8: (-0.000166034, 2.07613e-05), 0:00:00.066097 late
+2026-06-09 14:14:26,347 DEBUG Duplicate module_name
+2026-06-09 14:14:26,361 DEBUG Duplicate module_name
+2026-06-09 14:14:30,004 DEBUG manager: 14 (set_load_mode: mppt) scheduled for 2026-06-09 14:14:33.002703+02:00
+2026-06-09 14:14:30,004 DEBUG manager: 15 (set_load_mode: mppt) scheduled for 2026-06-09 14:14:33.004006+02:00
+2026-06-09 14:14:30,005 DEBUG manager: 16 (point) scheduled for 2026-06-09 14:14:40+02:00
+2026-06-09 14:14:30,006 DEBUG manager: 17 (point) scheduled for 2026-06-09 14:14:50+02:00
+2026-06-09 14:14:30,006 DEBUG manager: 18 (point) scheduled for 2026-06-09 14:15:00+02:00
+2026-06-09 14:14:30,007 DEBUG manager: 19 (curve) scheduled for 2026-06-09 14:15:00+02:00
+2026-06-09 14:14:30,007 DEBUG manager: 20 (point) scheduled for 2026-06-09 14:14:40+02:00
+2026-06-09 14:14:30,008 DEBUG manager: 21 (point) scheduled for 2026-06-09 14:14:50+02:00
+2026-06-09 14:14:30,008 DEBUG manager: 22 (point) scheduled for 2026-06-09 14:15:00+02:00
+2026-06-09 14:14:30,008 DEBUG manager: 23 (curve) scheduled for 2026-06-09 14:15:00+02:00
+2026-06-09 14:14:30,009 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:14:30,009 DEBUG manager: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+2026-06-09 14:14:30,026 DEBUG bus a: job 12: (-0.000320721, 8.09026e-07), 0:00:00.026684 late
+2026-06-09 14:14:30,051 DEBUG bus a: job 13: (-0.000189411, 2.11807e-05), 0:00:00.051688 late
+2026-06-09 14:14:32,592 DEBUG Weather data succesfully added
+2026-06-09 14:14:32,620 DEBUG Succesfully updated the weather_id
+2026-06-09 14:14:40,042 DEBUG bus a: job 16: (-0.000299065, 8.11766e-07), 0:00:00.042871 late
+2026-06-09 14:14:40,071 DEBUG bus a: job 20: (-0.000133723, 2.06229e-05), 0:00:00.071379 late
+2026-06-09 14:14:42,636 DEBUG Duplicate module_name
+2026-06-09 14:14:42,649 DEBUG Duplicate module_name
+2026-06-09 14:14:47,033 DEBUG Weather data succesfully added
+2026-06-09 14:14:47,063 DEBUG Succesfully updated the weather_id
+2026-06-09 14:14:50,042 DEBUG bus a: job 17: (-0.000334472, 8.14806e-07), 0:00:00.042409 late
+2026-06-09 14:14:50,067 DEBUG bus a: job 21: (-0.000154348, 2.11278e-05), 0:00:00.067207 late
+2026-06-09 14:14:57,085 DEBUG Duplicate module_name
+2026-06-09 14:14:57,103 DEBUG Duplicate module_name
+2026-06-09 14:15:00,010 DEBUG manager: 24 (set_load_mode: mppt) scheduled for 2026-06-09 14:15:03.010460+02:00
+2026-06-09 14:15:00,011 DEBUG manager: 25 (set_load_mode: mppt) scheduled for 2026-06-09 14:15:03.010460+02:00
+2026-06-09 14:15:00,012 DEBUG manager: 26 (point) scheduled for 2026-06-09 14:15:10+02:00
+2026-06-09 14:15:00,012 DEBUG manager: 27 (point) scheduled for 2026-06-09 14:15:20+02:00
+2026-06-09 14:15:00,013 DEBUG manager: 28 (point) scheduled for 2026-06-09 14:15:30+02:00
+2026-06-09 14:15:00,013 DEBUG manager: 29 (point) scheduled for 2026-06-09 14:15:10+02:00
+2026-06-09 14:15:00,014 DEBUG manager: 30 (point) scheduled for 2026-06-09 14:15:20+02:00
+2026-06-09 14:15:00,014 DEBUG manager: 31 (point) scheduled for 2026-06-09 14:15:30+02:00
+2026-06-09 14:15:00,015 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:15:00,015 DEBUG manager: [19, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+2026-06-09 14:15:00,038 DEBUG Weather data succesfully added
+2026-06-09 14:15:00,041 DEBUG bus a: job 18: (-0.000302158, 8.17644e-07), 0:00:00.041818 late
+2026-06-09 14:15:00,055 DEBUG bus a: job 19: curve measurement (start) 19, 0:00:00.055118 late
+2026-06-09 14:15:00,069 DEBUG Succesfully updated the weather_id
+2026-06-09 14:15:00,082 DEBUG bus a: job 22: (-0.000166034, 2.07491e-05), 0:00:00.082977 late
+2026-06-09 14:15:00,097 DEBUG bus a: job 23: curve measurement (start) 23, 0:00:00.097091 late
+2026-06-09 14:15:02,256 DEBUG bus a: job 19: curve measurement (complete) 0:00:02.256875 late
+2026-06-09 14:15:03,112 DEBUG bus a: job 25: delayed because O002 is not available
+2026-06-09 14:15:03,138 DEBUG bus a: job 25: delayed because O002 is not available
+2026-06-09 14:15:03,153 DEBUG bus a: job 25: delayed because O002 is not available
+2026-06-09 14:15:03,168 DEBUG bus a: job 25: delayed because O002 is not available
+2026-06-09 14:15:03,303 DEBUG bus a: job 23: curve measurement (complete) 0:00:03.303649 late
+2026-06-09 14:15:10,030 DEBUG bus a: job 26: (-0.000316941, 8.14032e-07), 0:00:00.030615 late
+2026-06-09 14:15:10,059 DEBUG bus a: job 29: (-0.000121001, 2.11035e-05), 0:00:00.059550 late
+2026-06-09 14:15:10,135 DEBUG Duplicate module_name
+2026-06-09 14:15:10,150 DEBUG Duplicate module_name
+2026-06-09 14:15:13,132 DEBUG Weather data succesfully added
+2026-06-09 14:15:13,164 DEBUG Succesfully updated the weather_id
+2026-06-09 14:15:20,030 DEBUG bus a: job 27: (-0.000302846, 8.1264e-07), 0:00:00.030607 late
+2026-06-09 14:15:20,059 DEBUG bus a: job 30: (-0.00012513, 2.10953e-05), 0:00:00.059184 late
+2026-06-09 14:15:23,188 DEBUG Duplicate module_name
+2026-06-09 14:15:23,209 DEBUG Duplicate module_name
+2026-06-09 14:15:26,046 DEBUG Weather data succesfully added
+2026-06-09 14:15:26,084 DEBUG Succesfully updated the weather_id
+2026-06-09 14:15:30,012 DEBUG manager: 32 (set_load_mode: mppt) scheduled for 2026-06-09 14:15:33.011909+02:00
+2026-06-09 14:15:30,013 DEBUG manager: 33 (set_load_mode: mppt) scheduled for 2026-06-09 14:15:33.012908+02:00
+2026-06-09 14:15:30,014 DEBUG manager: 34 (point) scheduled for 2026-06-09 14:15:40+02:00
+2026-06-09 14:15:30,015 DEBUG manager: 35 (point) scheduled for 2026-06-09 14:15:50+02:00
+2026-06-09 14:15:30,015 DEBUG manager: 36 (point) scheduled for 2026-06-09 14:16:00+02:00
+2026-06-09 14:15:30,016 DEBUG manager: 37 (curve) scheduled for 2026-06-09 14:16:00+02:00
+2026-06-09 14:15:30,017 DEBUG manager: 38 (point) scheduled for 2026-06-09 14:15:40+02:00
+2026-06-09 14:15:30,017 DEBUG manager: 39 (point) scheduled for 2026-06-09 14:15:50+02:00
+2026-06-09 14:15:30,018 DEBUG manager: 40 (point) scheduled for 2026-06-09 14:16:00+02:00
+2026-06-09 14:15:30,018 DEBUG manager: 41 (curve) scheduled for 2026-06-09 14:16:00+02:00
+2026-06-09 14:15:30,019 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:15:30,020 DEBUG manager: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+2026-06-09 14:15:30,042 DEBUG bus a: job 28: (-0.000336189, 7.98303e-07), 0:00:00.042888 late
+2026-06-09 14:15:30,067 DEBUG bus a: job 31: (-0.000121345, 2.08347e-05), 0:00:00.067586 late
+2026-06-09 14:15:36,109 DEBUG Duplicate module_name
+2026-06-09 14:15:36,130 DEBUG Duplicate module_name
+2026-06-09 14:15:39,052 DEBUG Weather data succesfully added
+2026-06-09 14:15:39,083 DEBUG Succesfully updated the weather_id
+2026-06-09 14:15:40,043 DEBUG bus a: job 34: (-0.000304566, 8.201e-07), 0:00:00.043200 late
+2026-06-09 14:15:40,069 DEBUG bus a: job 38: (-0.000126846, 2.05415e-05), 0:00:00.069836 late
+2026-06-09 14:15:49,108 DEBUG Duplicate module_name
+2026-06-09 14:15:49,127 DEBUG Duplicate module_name
+2026-06-09 14:15:50,041 DEBUG bus a: job 35: (-0.000330692, 8.12966e-07), 0:00:00.041654 late
+2026-06-09 14:15:50,067 DEBUG bus a: job 39: (-0.000129939, 2.06555e-05), 0:00:00.067377 late
+2026-06-09 14:15:52,057 DEBUG Weather data succesfully added
+2026-06-09 14:15:52,085 DEBUG Succesfully updated the weather_id
+2026-06-09 14:16:00,006 DEBUG manager: 42 (set_load_mode: mppt) scheduled for 2026-06-09 14:16:03.005474+02:00
+2026-06-09 14:16:00,007 DEBUG manager: 43 (set_load_mode: mppt) scheduled for 2026-06-09 14:16:03.007473+02:00
+2026-06-09 14:16:00,008 DEBUG manager: 44 (point) scheduled for 2026-06-09 14:16:10+02:00
+2026-06-09 14:16:00,009 DEBUG manager: 45 (point) scheduled for 2026-06-09 14:16:20+02:00
+2026-06-09 14:16:00,010 DEBUG manager: 46 (point) scheduled for 2026-06-09 14:16:30+02:00
+2026-06-09 14:16:00,010 DEBUG manager: 47 (point) scheduled for 2026-06-09 14:16:10+02:00
+2026-06-09 14:16:00,011 DEBUG manager: 48 (point) scheduled for 2026-06-09 14:16:20+02:00
+2026-06-09 14:16:00,012 DEBUG manager: 49 (point) scheduled for 2026-06-09 14:16:30+02:00
+2026-06-09 14:16:00,013 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:16:00,013 DEBUG manager: [37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+2026-06-09 14:16:00,026 DEBUG bus a: job 36: (-0.00030319, 8.06233e-07), 0:00:00.026914 late
+2026-06-09 14:16:00,040 DEBUG bus a: job 37: curve measurement (start) 37, 0:00:00.040959 late
+2026-06-09 14:16:00,068 DEBUG bus a: job 40: (-0.000182533, 2.11319e-05), 0:00:00.068064 late
+2026-06-09 14:16:00,082 DEBUG bus a: job 41: curve measurement (start) 41, 0:00:00.082087 late
+2026-06-09 14:16:02,107 DEBUG Duplicate module_name
+2026-06-09 14:16:02,130 DEBUG Duplicate module_name
+2026-06-09 14:16:02,242 DEBUG bus a: job 37: curve measurement (complete) 0:00:02.242329 late
+2026-06-09 14:16:03,114 DEBUG bus a: job 43: delayed because O002 is not available
+2026-06-09 14:16:03,129 DEBUG bus a: job 43: delayed because O002 is not available
+2026-06-09 14:16:03,144 DEBUG bus a: job 43: delayed because O002 is not available
+2026-06-09 14:16:03,160 DEBUG bus a: job 43: delayed because O002 is not available
+2026-06-09 14:16:03,290 DEBUG bus a: job 41: curve measurement (complete) 0:00:03.290016 late
+2026-06-09 14:16:05,107 DEBUG Weather data succesfully added
+2026-06-09 14:16:05,138 DEBUG Succesfully updated the weather_id
+2026-06-09 14:16:10,042 DEBUG bus a: job 44: (-0.000331036, 8.01995e-07), 0:00:00.042304 late
+2026-06-09 14:16:10,068 DEBUG bus a: job 47: (-0.00018391, 2.07328e-05), 0:00:00.068934 late
+2026-06-09 14:16:15,300 DEBUG Duplicate module_name
+2026-06-09 14:16:15,324 DEBUG Duplicate module_name
+2026-06-09 14:16:18,372 DEBUG Weather data succesfully added
+2026-06-09 14:16:18,408 DEBUG Succesfully updated the weather_id
+2026-06-09 14:16:20,028 DEBUG bus a: job 45: (-0.000325534, 8.02175e-07), 0:00:00.028285 late
+2026-06-09 14:16:20,053 DEBUG bus a: job 48: (-0.000156408, 2.12012e-05), 0:00:00.053666 late
+2026-06-09 14:16:28,428 DEBUG Duplicate module_name
+2026-06-09 14:16:28,450 DEBUG Duplicate module_name
+2026-06-09 14:16:30,003 DEBUG manager: 50 (set_load_mode: mppt) scheduled for 2026-06-09 14:16:33.003182+02:00
+2026-06-09 14:16:30,004 DEBUG manager: 51 (set_load_mode: mppt) scheduled for 2026-06-09 14:16:33.003182+02:00
+2026-06-09 14:16:30,005 DEBUG manager: 52 (point) scheduled for 2026-06-09 14:16:40+02:00
+2026-06-09 14:16:30,007 DEBUG manager: 53 (point) scheduled for 2026-06-09 14:16:50+02:00
+2026-06-09 14:16:30,007 DEBUG manager: 54 (point) scheduled for 2026-06-09 14:17:00+02:00
+2026-06-09 14:16:30,008 DEBUG manager: 55 (curve) scheduled for 2026-06-09 14:17:00+02:00
+2026-06-09 14:16:30,008 DEBUG manager: 56 (point) scheduled for 2026-06-09 14:16:40+02:00
+2026-06-09 14:16:30,009 DEBUG manager: 57 (point) scheduled for 2026-06-09 14:16:50+02:00
+2026-06-09 14:16:30,009 DEBUG manager: 58 (point) scheduled for 2026-06-09 14:17:00+02:00
+2026-06-09 14:16:30,010 DEBUG manager: 59 (curve) scheduled for 2026-06-09 14:17:00+02:00
+2026-06-09 14:16:30,010 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:16:30,011 DEBUG manager: [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+2026-06-09 14:16:30,043 DEBUG bus a: job 46: (-0.000326223, 8.03052e-07), 0:00:00.043732 late
+2026-06-09 14:16:30,069 DEBUG bus a: job 49: (-0.000141285, 2.06717e-05), 0:00:00.069312 late
+2026-06-09 14:16:31,504 DEBUG Weather data succesfully added
+2026-06-09 14:16:31,563 DEBUG Succesfully updated the weather_id
+2026-06-09 14:16:40,034 DEBUG bus a: job 52: (-0.000334128, 8.13227e-07), 0:00:00.034013 late
+2026-06-09 14:16:40,058 DEBUG bus a: job 56: (-0.000182533, 2.13477e-05), 0:00:00.058831 late
+2026-06-09 14:16:41,585 DEBUG Duplicate module_name
+2026-06-09 14:16:41,613 DEBUG Duplicate module_name
+2026-06-09 14:16:44,663 DEBUG Weather data succesfully added
+2026-06-09 14:16:44,699 DEBUG Succesfully updated the weather_id
+2026-06-09 14:16:50,033 DEBUG bus a: job 53: (-0.000297345, 8.15806e-07), 0:00:00.033345 late
+2026-06-09 14:16:50,059 DEBUG bus a: job 57: (-0.000123409, 2.15026e-05), 0:00:00.059300 late
+2026-06-09 14:16:54,722 DEBUG Duplicate module_name
+2026-06-09 14:16:54,738 DEBUG Duplicate module_name
+2026-06-09 14:16:59,948 DEBUG Weather data succesfully added
+2026-06-09 14:16:59,984 DEBUG Succesfully updated the weather_id
+2026-06-09 14:17:00,006 DEBUG manager: 60 (set_load_mode: mppt) scheduled for 2026-06-09 14:17:03.005903+02:00
+2026-06-09 14:17:00,006 DEBUG manager: 61 (set_load_mode: mppt) scheduled for 2026-06-09 14:17:03.006907+02:00
+2026-06-09 14:17:00,009 DEBUG manager: 62 (point) scheduled for 2026-06-09 14:17:10+02:00
+2026-06-09 14:17:00,009 DEBUG manager: 63 (point) scheduled for 2026-06-09 14:17:20+02:00
+2026-06-09 14:17:00,010 DEBUG manager: 64 (point) scheduled for 2026-06-09 14:17:30+02:00
+2026-06-09 14:17:00,010 DEBUG manager: 65 (point) scheduled for 2026-06-09 14:17:10+02:00
+2026-06-09 14:17:00,011 DEBUG manager: 66 (point) scheduled for 2026-06-09 14:17:20+02:00
+2026-06-09 14:17:00,011 DEBUG manager: 67 (point) scheduled for 2026-06-09 14:17:30+02:00
+2026-06-09 14:17:00,012 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:17:00,013 DEBUG manager: [55, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]
+2026-06-09 14:17:00,029 DEBUG bus a: job 54: (-0.000318317, 8.23685e-07), 0:00:00.028157 late
+2026-06-09 14:17:00,043 DEBUG bus a: job 55: curve measurement (start) 55, 0:00:00.043139 late
+2026-06-09 14:17:00,068 DEBUG bus a: job 58: (-0.000183566, 2.07939e-05), 0:00:00.068972 late
+2026-06-09 14:17:00,084 DEBUG bus a: job 59: curve measurement (start) 59, 0:00:00.084045 late
+2026-06-09 14:17:02,277 DEBUG bus a: job 55: curve measurement (complete) 0:00:02.277048 late
+2026-06-09 14:17:03,113 DEBUG bus a: job 61: delayed because O002 is not available
+2026-06-09 14:17:03,135 DEBUG bus a: job 61: delayed because O002 is not available
+2026-06-09 14:17:03,149 DEBUG bus a: job 61: delayed because O002 is not available
+2026-06-09 14:17:03,165 DEBUG bus a: job 61: delayed because O002 is not available
+2026-06-09 14:17:03,289 DEBUG bus a: job 59: curve measurement (complete) 0:00:03.289505 late
+2026-06-09 14:17:10,021 DEBUG Duplicate module_name
+2026-06-09 14:17:10,033 DEBUG bus a: job 62: (-0.000322786, 8.13939e-07), 0:00:00.033507 late
+2026-06-09 14:17:10,045 DEBUG Duplicate module_name
+2026-06-09 14:17:10,060 DEBUG bus a: job 65: (-0.000186314, 2.11767e-05), 0:00:00.060154 late
+2026-06-09 14:17:15,193 DEBUG Weather data succesfully added
+2026-06-09 14:17:15,229 DEBUG Succesfully updated the weather_id
+2026-06-09 14:17:20,033 DEBUG bus a: job 63: (-0.000309035, 8.21851e-07), 0:00:00.033229 late
+2026-06-09 14:17:20,060 DEBUG bus a: job 66: (-0.000122721, 2.07858e-05), 0:00:00.060238 late
+2026-06-09 14:17:25,251 DEBUG Duplicate module_name
+2026-06-09 14:17:25,313 DEBUG Duplicate module_name
+2026-06-09 14:17:30,011 DEBUG manager: 68 (set_load_mode: mppt) scheduled for 2026-06-09 14:17:33.010215+02:00
+2026-06-09 14:17:30,011 DEBUG manager: 69 (set_load_mode: mppt) scheduled for 2026-06-09 14:17:33.011257+02:00
+2026-06-09 14:17:30,012 DEBUG manager: 70 (point) scheduled for 2026-06-09 14:17:40+02:00
+2026-06-09 14:17:30,013 DEBUG manager: 71 (point) scheduled for 2026-06-09 14:17:50+02:00
+2026-06-09 14:17:30,013 DEBUG manager: 72 (point) scheduled for 2026-06-09 14:18:00+02:00
+2026-06-09 14:17:30,014 DEBUG manager: 73 (curve) scheduled for 2026-06-09 14:18:00+02:00
+2026-06-09 14:17:30,014 DEBUG manager: 74 (point) scheduled for 2026-06-09 14:17:40+02:00
+2026-06-09 14:17:30,015 DEBUG manager: 75 (point) scheduled for 2026-06-09 14:17:50+02:00
+2026-06-09 14:17:30,015 DEBUG manager: 76 (point) scheduled for 2026-06-09 14:18:00+02:00
+2026-06-09 14:17:30,015 DEBUG manager: 77 (curve) scheduled for 2026-06-09 14:18:00+02:00
+2026-06-09 14:17:30,016 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:17:30,016 DEBUG manager: [67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+2026-06-09 14:17:30,034 DEBUG bus a: job 64: (-0.000324158, 8.01562e-07), 0:00:00.034317 late
+2026-06-09 14:17:30,060 DEBUG bus a: job 67: (-0.000188379, 2.04396e-05), 0:00:00.060283 late
+2026-06-09 14:17:30,766 DEBUG Weather data succesfully added
+2026-06-09 14:17:30,797 DEBUG Succesfully updated the weather_id
+2026-06-09 14:17:40,044 DEBUG bus a: job 70: (-0.000331036, 8.01381e-07), 0:00:00.044366 late
+2026-06-09 14:17:40,069 DEBUG bus a: job 74: (-0.000136472, 2.13926e-05), 0:00:00.069375 late
+2026-06-09 14:17:40,826 DEBUG Duplicate module_name
+2026-06-09 14:17:40,863 DEBUG Duplicate module_name
+2026-06-09 14:17:43,979 DEBUG Weather data succesfully added
+2026-06-09 14:17:44,048 DEBUG Succesfully updated the weather_id
+2026-06-09 14:17:50,028 DEBUG bus a: job 71: (-0.000321066, 8.03759e-07), 0:00:00.028397 late
+2026-06-09 14:17:50,055 DEBUG bus a: job 75: (-0.000166378, 2.08305e-05), 0:00:00.055333 late
+2026-06-09 14:17:54,085 DEBUG Duplicate module_name
+2026-06-09 14:17:54,097 DEBUG Duplicate module_name
+2026-06-09 14:17:57,087 DEBUG Weather data succesfully added
+2026-06-09 14:17:57,120 DEBUG Succesfully updated the weather_id
+2026-06-09 14:18:00,003 DEBUG manager: 78 (set_load_mode: mppt) scheduled for 2026-06-09 14:18:03.002403+02:00
+2026-06-09 14:18:00,004 DEBUG manager: 79 (set_load_mode: mppt) scheduled for 2026-06-09 14:18:03.003399+02:00
+2026-06-09 14:18:00,005 DEBUG manager: 80 (point) scheduled for 2026-06-09 14:18:10+02:00
+2026-06-09 14:18:00,005 DEBUG manager: 81 (point) scheduled for 2026-06-09 14:18:20+02:00
+2026-06-09 14:18:00,006 DEBUG manager: 82 (point) scheduled for 2026-06-09 14:18:30+02:00
+2026-06-09 14:18:00,006 DEBUG manager: 83 (point) scheduled for 2026-06-09 14:18:10+02:00
+2026-06-09 14:18:00,007 DEBUG manager: 84 (point) scheduled for 2026-06-09 14:18:20+02:00
+2026-06-09 14:18:00,007 DEBUG manager: 85 (point) scheduled for 2026-06-09 14:18:30+02:00
+2026-06-09 14:18:00,008 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:18:00,008 DEBUG manager: [73, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85]
+2026-06-09 14:18:00,024 DEBUG bus a: job 72: (-0.000310063, 7.90955e-07), 0:00:00.024019 late
+2026-06-09 14:18:00,038 DEBUG bus a: job 73: curve measurement (start) 73, 0:00:00.037824 late
+2026-06-09 14:18:00,069 DEBUG bus a: job 76: (-0.000154692, 2.06025e-05), 0:00:00.069355 late
+2026-06-09 14:18:00,083 DEBUG bus a: job 77: curve measurement (start) 77, 0:00:00.083889 late
+2026-06-09 14:18:02,243 DEBUG bus a: job 73: curve measurement (complete) 0:00:02.243977 late
+2026-06-09 14:18:03,101 DEBUG bus a: job 79: delayed because O002 is not available
+2026-06-09 14:18:03,116 DEBUG bus a: job 79: delayed because O002 is not available
+2026-06-09 14:18:03,133 DEBUG bus a: job 79: delayed because O002 is not available
+2026-06-09 14:18:03,164 DEBUG bus a: job 79: delayed because O002 is not available
+2026-06-09 14:18:03,291 DEBUG bus a: job 77: curve measurement (complete) 0:00:03.291022 late
+2026-06-09 14:18:07,139 DEBUG Duplicate module_name
+2026-06-09 14:18:07,160 DEBUG Duplicate module_name
+2026-06-09 14:18:10,043 DEBUG bus a: job 80: (-0.000330003, 8.04102e-07), 0:00:00.043864 late
+2026-06-09 14:18:10,070 DEBUG bus a: job 83: (-0.000182877, 2.11197e-05), 0:00:00.070848 late
+2026-06-09 14:18:10,295 DEBUG Weather data succesfully added
+2026-06-09 14:18:10,424 DEBUG Succesfully updated the weather_id
+2026-06-09 14:18:20,035 DEBUG bus a: job 81: (-0.000296317, 8.20809e-07), 0:00:00.035089 late
+2026-06-09 14:18:20,061 DEBUG bus a: job 84: (-0.000164658, 2.06676e-05), 0:00:00.061753 late
+2026-06-09 14:18:20,445 DEBUG Duplicate module_name
+2026-06-09 14:18:20,460 DEBUG Duplicate module_name
+2026-06-09 14:18:23,711 DEBUG Weather data succesfully added
+2026-06-09 14:18:23,750 DEBUG Succesfully updated the weather_id
+2026-06-09 14:18:30,013 DEBUG manager: 86 (set_load_mode: mppt) scheduled for 2026-06-09 14:18:33.012840+02:00
+2026-06-09 14:18:30,013 DEBUG manager: 87 (set_load_mode: mppt) scheduled for 2026-06-09 14:18:33.013838+02:00
+2026-06-09 14:18:30,014 DEBUG manager: 88 (point) scheduled for 2026-06-09 14:18:40+02:00
+2026-06-09 14:18:30,015 DEBUG manager: 89 (point) scheduled for 2026-06-09 14:18:50+02:00
+2026-06-09 14:18:30,015 DEBUG manager: 90 (point) scheduled for 2026-06-09 14:19:00+02:00
+2026-06-09 14:18:30,015 DEBUG manager: 91 (curve) scheduled for 2026-06-09 14:19:00+02:00
+2026-06-09 14:18:30,016 DEBUG manager: 92 (point) scheduled for 2026-06-09 14:18:40+02:00
+2026-06-09 14:18:30,017 DEBUG manager: 93 (point) scheduled for 2026-06-09 14:18:50+02:00
+2026-06-09 14:18:30,017 DEBUG manager: 94 (point) scheduled for 2026-06-09 14:19:00+02:00
+2026-06-09 14:18:30,018 DEBUG manager: 95 (curve) scheduled for 2026-06-09 14:19:00+02:00
+2026-06-09 14:18:30,018 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:18:30,019 DEBUG manager: [85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]
+2026-06-09 14:18:30,045 DEBUG bus a: job 82: (-0.000309723, 8.1044e-07), 0:00:00.044459 late
+2026-06-09 14:18:30,070 DEBUG bus a: job 85: (-0.000162941, 2.07206e-05), 0:00:00.070672 late
+2026-06-09 14:18:40,035 DEBUG bus a: job 88: (-0.000324158, 8.12709e-07), 0:00:00.035592 late
+2026-06-09 14:18:40,060 DEBUG bus a: job 92: (-0.000121345, 2.09161e-05), 0:00:00.060962 late
+2026-06-09 14:18:50,030 DEBUG bus a: job 89: (-0.00030319, 8.13343e-07), 0:00:00.030628 late
+2026-06-09 14:18:50,058 DEBUG bus a: job 93: (-0.000136128, 2.06758e-05), 0:00:00.058164 late
+2026-06-09 14:18:52,899 ERROR Data could not be added, maybe the file is not yet created or there is an error: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2026-06-09 14:19:00,014 ERROR Process update_loop died: restarting
+2026-06-09 14:19:00,046 DEBUG bus a: job 90: (-0.000315564, 8.02536e-07), 0:00:00.046180 late
+2026-06-09 14:19:00,059 DEBUG bus a: job 91: curve measurement (start) 91, 0:00:00.058176 late
+2026-06-09 14:19:00,077 INFO restarted update_loop
+2026-06-09 14:19:00,078 DEBUG manager: 96 (set_load_mode: mppt) scheduled for 2026-06-09 14:19:03.077341+02:00
+2026-06-09 14:19:00,078 DEBUG manager: 97 (set_load_mode: mppt) scheduled for 2026-06-09 14:19:03.078455+02:00
+2026-06-09 14:19:00,079 DEBUG manager: 98 (point) scheduled for 2026-06-09 14:19:10+02:00
+2026-06-09 14:19:00,079 DEBUG manager: 99 (point) scheduled for 2026-06-09 14:19:20+02:00
+2026-06-09 14:19:00,080 DEBUG manager: 100 (point) scheduled for 2026-06-09 14:19:30+02:00
+2026-06-09 14:19:00,080 DEBUG manager: 101 (point) scheduled for 2026-06-09 14:19:10+02:00
+2026-06-09 14:19:00,080 DEBUG manager: 102 (point) scheduled for 2026-06-09 14:19:20+02:00
+2026-06-09 14:19:00,081 DEBUG manager: 103 (point) scheduled for 2026-06-09 14:19:30+02:00
+2026-06-09 14:19:00,081 DEBUG manager: 9 jobs are scheduled
+2026-06-09 14:19:00,082 DEBUG manager: [95, 96, 97, 98, 99, 100, 101, 102, 103]
+2026-06-09 14:19:00,087 DEBUG bus a: job 94: (-0.000122377, 2.11808e-05), 0:00:00.087316 late
+2026-06-09 14:19:00,100 DEBUG bus a: job 95: curve measurement (start) 95, 0:00:00.100725 late
+2026-06-09 14:19:01,744 DEBUG opet-supervisor started
+2026-06-09 14:19:02,260 DEBUG bus a: job 91: curve measurement (complete) 0:00:02.260448 late
+2026-06-09 14:19:03,179 DEBUG bus a: job 97: delayed because O002 is not available
+2026-06-09 14:19:03,307 DEBUG bus a: job 95: curve measurement (complete) 0:00:03.306765 late
+2026-06-09 14:19:07,072 DEBUG Database connected succesfully
+2026-06-09 14:19:07,109 DEBUG Building SSL context
+2026-06-09 14:19:07,206 DEBUG Switching to SSL
+2026-06-09 14:19:07,276 DEBUG SSL has been enabled
+2026-06-09 14:19:07,276 DEBUG Starting authorization phase
+2026-06-09 14:19:07,276 DEBUG The provided initial strategy is mysql_native_password
+2026-06-09 14:19:07,276 INFO package: mysql.connector.plugins
+2026-06-09 14:19:07,276 INFO plugin_name: mysql_native_password
+2026-06-09 14:19:07,276 INFO AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2026-06-09 14:19:07,301 DEBUG mysql_native_password completed succesfully
+2026-06-09 14:19:07,461 DEBUG Weather database succesfully connected
+2026-06-09 14:19:07,669 DEBUG Duplicate module_name
+2026-06-09 14:19:07,731 DEBUG Duplicate module_name
+2026-06-09 14:19:10,029 DEBUG bus a: job 98: (-0.000293564, 8.00274e-07), 0:00:00.029419 late
+2026-06-09 14:19:10,055 DEBUG bus a: job 101: (-0.000124442, 2.10953e-05), 0:00:00.055842 late
+2026-06-09 14:19:12,592 DEBUG Weather data succesfully added
+2026-06-09 14:19:14,091 DEBUG Succesfully updated the weather_id
+2026-06-09 14:19:20,044 DEBUG bus a: job 99: (-0.000295972, 8.1765e-07), 0:00:00.044143 late
+2026-06-09 14:19:20,071 DEBUG bus a: job 102: (-0.000162253, 2.08957e-05), 0:00:00.071489 late
+2026-06-09 14:19:24,114 DEBUG Duplicate module_name
+2026-06-09 14:19:24,149 DEBUG Duplicate module_name
+2026-06-09 14:19:27,400 DEBUG Weather data succesfully added
+2026-06-09 14:19:27,604 DEBUG Succesfully updated the weather_id
+2026-06-09 14:19:30,011 DEBUG manager: 104 (set_load_mode: mppt) scheduled for 2026-06-09 14:19:33.011605+02:00
+2026-06-09 14:19:30,012 DEBUG manager: 105 (set_load_mode: mppt) scheduled for 2026-06-09 14:19:33.012671+02:00
+2026-06-09 14:19:30,013 DEBUG manager: 106 (point) scheduled for 2026-06-09 14:19:40+02:00
+2026-06-09 14:19:30,014 DEBUG manager: 107 (point) scheduled for 2026-06-09 14:19:50+02:00
+2026-06-09 14:19:30,014 DEBUG manager: 108 (point) scheduled for 2026-06-09 14:20:00+02:00
+2026-06-09 14:19:30,015 DEBUG manager: 109 (curve) scheduled for 2026-06-09 14:20:00+02:00
+2026-06-09 14:19:30,015 DEBUG manager: 110 (point) scheduled for 2026-06-09 14:19:40+02:00
+2026-06-09 14:19:30,016 DEBUG manager: 111 (point) scheduled for 2026-06-09 14:19:50+02:00
+2026-06-09 14:19:30,016 DEBUG manager: 112 (point) scheduled for 2026-06-09 14:20:00+02:00
+2026-06-09 14:19:30,017 DEBUG manager: 113 (curve) scheduled for 2026-06-09 14:20:00+02:00
+2026-06-09 14:19:30,018 DEBUG manager: 11 jobs are scheduled
+2026-06-09 14:19:30,018 DEBUG manager: [103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113]
+2026-06-09 14:19:30,034 DEBUG bus a: job 100: (-0.00032519, 8.03053e-07), 0:00:00.034725 late
+2026-06-09 14:19:30,061 DEBUG bus a: job 103: (-0.000134407, 2.07369e-05), 0:00:00.061448 late
+2026-06-09 14:19:37,636 DEBUG Duplicate module_name
+2026-06-09 14:19:37,660 DEBUG Duplicate module_name
+2026-06-09 14:19:40,031 DEBUG bus a: job 106: (-0.000332064, 8.07523e-07), 0:00:00.031616 late
+2026-06-09 14:19:40,057 DEBUG bus a: job 110: (-0.000186314, 2.07572e-05), 0:00:00.057359 late
+2026-06-09 14:19:40,920 DEBUG Weather data succesfully added
+2026-06-09 14:19:41,368 DEBUG Succesfully updated the weather_id
+2026-06-09 14:19:50,031 DEBUG bus a: job 107: (-0.000306627, 8.06845e-07), 0:00:00.031074 late
+2026-06-09 14:19:50,057 DEBUG bus a: job 111: (-0.000177376, 2.04192e-05), 0:00:00.057603 late
+2026-06-09 14:19:51,397 DEBUG Duplicate module_name
+2026-06-09 14:19:51,414 DEBUG Duplicate module_name
+2026-06-09 14:19:54,659 DEBUG Weather data succesfully added
+2026-06-09 14:19:54,877 DEBUG Succesfully updated the weather_id
+2026-06-09 14:19:56,519 ERROR Keyboard interrupt, shutting down child processes
+2026-06-09 14:19:56,645 INFO bus a: serial port closed
