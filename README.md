@@ -45,7 +45,7 @@ The TUD OPET library is a forked library adapted for the use case for the TU Del
 
 When all these programs are installed, and the database has been set up using the PostgreSQL installer, the program `pyt_to_SQL.py` can be used to continue the setup. 
 The first thing that needs to be done is to configure your database in `init()` in `pyt_to_SQL.py`. Here, you need to fill in the database name, the username, the user password, the IP address of the server (if the database is run on the same computer, 'localhost' will work), and the port through which it can be accessed. The same needs to be done for the MySQL database. The function is `mysql_init()` in `Weatherdb_to_pyth.py`.
-[
+
 Do not forget to make an account for remote access for users, change the configuration files of the database, and open the port on your server ([Instructions](https://medium.com/@imtejassingh/how-to-enable-and-use-remote-postgresql-connections-step-by-step-334049e32925)). These users should be granted privileges to select and execute. If you can trust them, you can grant them access to all. 
 
 The tables for data storage can be created using the function `create_table(type, conn, cur)`. This needs to be done for the types: 'pv_point', 'pv_curve', 'weather', and 'modules'. Running the following code does that: 
