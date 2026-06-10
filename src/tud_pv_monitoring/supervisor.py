@@ -78,6 +78,7 @@ if __name__ == '__main__':
         jobs_in_progress = manager.dict({})
         job_id = 0
 
+        print("Supervisor starting")
         shutdown_event = manager.Event()
         # All possible buses. Each bus will get a process
         buses_all = {
@@ -241,7 +242,7 @@ if __name__ == '__main__':
                     if not tracer or not module.get('tracer').startswith('O'):
                         logger.error(f'{module.get("module_name")} does not have an expected tracer assigned')
                         module['tracer'] = 'XXXX'
-
+                    
                     if not mounted_on == "Egis-tracker" and not mounted_on == "Fixed-rack":
                         module['mounted_on'] = 'Unknown-rack'
                         logger.error(f'The mounted_on key of {module.get("module_name")} must be Fixed-rack or Egis-tracker')
@@ -254,6 +255,12 @@ if __name__ == '__main__':
 
                 # Add set_load_mode jobs
                 for module in modules:
+
+                    # Check if tracer is present in load_info otherwise skip
+                    if module.get("tracer") not in load_info:
+                        logger.error(f'Tracer {tracer!r} for module {module.get("module_name")} is not present in opet_info.json; skipping load job')
+                        continue
+
                     # check if module is enabled, and stopdate has yet not passed
                     module_enabled = not module.get('disabled', False)
                     module_not_expired = (
@@ -326,96 +333,107 @@ if __name__ == '__main__':
                 schedule_end = present() + datetime.timedelta(seconds=SCHEDULE_HORIZON)
 
                 for module in modules:
-                    # Schedule point measurements
-                    point_interval = module.get('interval_point')
-
-
-                    if point_interval is None or type(point_interval) is not int:
-                        logger.error(f'Could not schedule point measurement since interval_point is not set or not an integer for module {module.get("module_name")}')
                     
-                    else:
-                        point_interval = datetime.timedelta(seconds=point_interval)
+                    # Check if tracer is present in load_info otherwise skip
+                    if module.get("tracer") not in load_info:
+                        logger.error(f'Tracer {tracer!r} for module {module.get("module_name")} is not present in opet_info.json; skipping measurements')
+                        continue
+                    
+                    # Schedule point measurements
+                    try:
+                        point_interval = module.get('interval_point')
+                        
+                        if point_interval is None or type(point_interval) is not int:
+                            logger.error(f'Could not schedule point measurement since interval_point is not set or not an integer for module {module.get("module_name")}')
 
-                        # Find times in the scheduling window, spaced by the interval
-                        scheduled_times = datetime_range(
-                            schedule_start,
-                            schedule_end,
-                            point_interval,
-                            include_start_point=False
-                        )
+                        else:
+                            point_interval = datetime.timedelta(seconds=point_interval)
 
-                        # Jobs expire when they reach the scheduled time plus the
-                        # measurement interval, because then they are redundant with
-                        # the next repetition of the measurement.
+                            # Find times in the scheduling window, spaced by the interval
+                            scheduled_times = datetime_range(
+                                schedule_start,
+                                schedule_end,
+                                point_interval,
+                                include_start_point=False
+                            )
 
-                        # Eliminate times that would already have expired
-                        scheduled_times = [
-                            t
-                            for t
-                            in scheduled_times
-                            if t + point_interval >= present()
-                        ]
+                            # Jobs expire when they reach the scheduled time plus the
+                            # measurement interval, because then they are redundant with
+                            # the next repetition of the measurement.
 
-                        # Create a dict that gives the job instructions
-                        for scheduled_time in scheduled_times:
-                            jobs[job_id] = {
-                                'scheduled_time': scheduled_time,
-                                'expiration_time': scheduled_time + point_interval,
-                                'opet_name': module['tracer'],
-                                'opet_bus': load_info[module['tracer']]['bus'],
-                                'opet_address': load_info[module['tracer']]['address'],
-                                'module_name': module['module_name'],
-                                'mounted_on': module['mounted_on'],
-                                'axis_azimuth': config[module['mounted_on']]['axis_azimuth'],
-                                'axis_tilt': config[module['mounted_on']]['axis_tilt'],
-                                'job_type': 'point',
-                                'data_destination': config['data_destination']
-                            }
-                            logger.debug(f'manager: {job_id} (point) scheduled for {scheduled_time.astimezone(TZ_LOCAL)}')
-                            job_id += 1
+                            # Eliminate times that would already have expired
+                            scheduled_times = [
+                                t
+                                for t
+                                in scheduled_times
+                                if t + point_interval >= present()
+                            ]
 
-                    # Schedule curve measurements
-                    curve_interval = module.get('interval_curve')
+                            # Create a dict that gives the job instructions
+                            for scheduled_time in scheduled_times:
+                                jobs[job_id] = {
+                                    'scheduled_time': scheduled_time,
+                                    'expiration_time': scheduled_time + point_interval,
+                                    'opet_name': module['tracer'],
+                                    'opet_bus': load_info[module['tracer']]['bus'],
+                                    'opet_address': load_info[module['tracer']]['address'],
+                                    'module_name': module['module_name'],
+                                    'mounted_on': module['mounted_on'],
+                                    'axis_azimuth': config[module['mounted_on']]['axis_azimuth'],
+                                    'axis_tilt': config[module['mounted_on']]['axis_tilt'],
+                                    'job_type': 'point',
+                                    'data_destination': config['data_destination']
+                                }
+                                logger.debug(f'manager: {job_id} (point) scheduled for {scheduled_time.astimezone(TZ_LOCAL)}')
+                                job_id += 1
+                    except Exception:
+                        logger.exception("Exception caught while setting point measurement")
 
-                    if curve_interval is None or type(curve_interval) is not int:
-                        logger.error(f'Could not schedule curve measurement since interval_curve is not set for module {module.get("module_name")}')
+                    try:    
+                        # Schedule curve measurements
+                        curve_interval = module.get('interval_curve')
 
-                    else:
-                        curve_interval = datetime.timedelta(seconds=module.get('interval_curve'))
+                        if curve_interval is None or type(curve_interval) is not int:
+                            logger.error(f'Could not schedule curve measurement since interval_curve is not set for module {module.get("module_name")}')
 
-                        # Find times in the scheduling window, spaced by the interval
-                        scheduled_times = datetime_range(
-                            schedule_start,
-                            schedule_end,
-                            curve_interval,
-                            include_start_point=False
-                        )
+                        else:
+                            curve_interval = datetime.timedelta(seconds=module.get('interval_curve'))
 
-                        # Eliminate times that would already have expired
-                        scheduled_times = [
-                            t
-                            for t
-                            in scheduled_times
-                            if t + curve_interval >= present()
-                        ]
+                            # Find times in the scheduling window, spaced by the interval
+                            scheduled_times = datetime_range(
+                                schedule_start,
+                                schedule_end,
+                                curve_interval,
+                                include_start_point=False
+                            )
 
-                        # Create a dict that gives the job instructions
-                        for scheduled_time in scheduled_times:
-                            jobs[job_id] = {
-                                'scheduled_time': scheduled_time,
-                                'expiration_time': scheduled_time + curve_interval,
-                                'opet_name': module['tracer'],
-                                'opet_bus': load_info[module['tracer']]['bus'],
-                                'opet_address': load_info[module['tracer']]['address'],
-                                'module_name': module['module_name'],
-                                'mounted_on': module['mounted_on'],
-                                'axis_azimuth': config[module['mounted_on']]['axis_azimuth'],
-                                'axis_tilt': config[module['mounted_on']]['axis_tilt'],
-                                'job_type': 'curve',
-                                'data_destination': config['data_destination']
-                            }
-                            logger.debug(f'manager: {job_id} (curve) scheduled for {scheduled_time.astimezone(TZ_LOCAL)}')
-                            job_id += 1
+                            # Eliminate times that would already have expired
+                            scheduled_times = [
+                                t
+                                for t
+                                in scheduled_times
+                                if t + curve_interval >= present()
+                            ]
+
+                            # Create a dict that gives the job instructions
+                            for scheduled_time in scheduled_times:
+                                jobs[job_id] = {
+                                    'scheduled_time': scheduled_time,
+                                    'expiration_time': scheduled_time + curve_interval,
+                                    'opet_name': module['tracer'],
+                                    'opet_bus': load_info[module['tracer']]['bus'],
+                                    'opet_address': load_info[module['tracer']]['address'],
+                                    'module_name': module['module_name'],
+                                    'mounted_on': module['mounted_on'],
+                                    'axis_azimuth': config[module['mounted_on']]['axis_azimuth'],
+                                    'axis_tilt': config[module['mounted_on']]['axis_tilt'],
+                                    'job_type': 'curve',
+                                    'data_destination': config['data_destination']
+                                }
+                                logger.debug(f'manager: {job_id} (curve) scheduled for {scheduled_time.astimezone(TZ_LOCAL)}')
+                                job_id += 1
+                    except Exception:
+                        logger.exception("Exception caught while setting curve measurement")
 
                 # Remove jobs that have been waiting too long
                 for old_job_id, old_job in list(jobs.items()):
@@ -435,6 +453,7 @@ if __name__ == '__main__':
             logger.error('Keyboard interrupt, shutting down child processes')
             shutdown_event.set()  
         except Exception as e:
+            logger.error("Error caught in main main supervisor loop. Shutting down...")
             logger.exception(f'shutting down child processes; {e}')
             shutdown_event.set()   
         finally:
