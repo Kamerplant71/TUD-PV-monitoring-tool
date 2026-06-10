@@ -78,6 +78,10 @@ If you want to stop a measurement, you either need to set disabled to TRUE in th
 >[!TIP]
 >When filling in the `measurement_config.json`, make sure that autosave is disabled. Otherwise, some data may be uploaded too quickly to the database.
 
+>[!IMPORTANT]
+> The OPET assigned to the module in the measurement_config must be defined in `opet_info.json`. Otherwise, jobs won't be scheduled for that module. If you define it in `opet_info.json`, the supervisor needs to be restarted.
+
+
 To access the database from your personal computer, you need to make sure that the function `init()` contains the correct IP address of the machine that runs the database. You also need to know the name of the database, your username, your password, and the port through which it is accessible.  
 
 Data can be extracted using `download.py`, which can be found in the user_tools. This command either the 'pv_point' or 'pv_curve' data with the weather data. You also need to set a start and stop date, which acts as a filter for your data. Lastly, you need to select the solar modules you want to have. The data that you get is not perfectly on a single timestamp, because the OPET measurements take place at a different time compared to the weather measurements. This data gets synced based on the closest measurement within a 5-minute time difference compared to the opet data. 
