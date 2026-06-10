@@ -24,7 +24,7 @@ Things that need to be installed on the server to run the system:
 * `pip install psycopg2`
 * `pip install psycopg2-binary`
 * `pip install pandas`
-* `pip install serial`
+* `pip install numpy`
 * `pip install mysql-connector-python`
 * `pip install setuptools`
 * `pip install psycopg2 pgvector`
