@@ -87,6 +87,16 @@ def to_local_datetime(value, timezone_name: str) -> dt.datetime:
 # -----------------------------------------------------------------------------
 matplotlib.set_loglevel("warning")
 
+plt.rcParams.update({
+    "font.size": 16,
+    "axes.titlesize": 18,
+    "axes.labelsize": 16,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 13,
+    "figure.titlesize": 19,
+})
+
 conn = None
 mysql_conn = None
 animation = None
