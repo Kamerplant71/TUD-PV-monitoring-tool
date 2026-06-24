@@ -109,3 +109,13 @@ connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection re
 2026-06-24 12:36:10,751 mysql_native_password completed succesfully
 2026-06-24 12:36:10,762 Weather database succesfully connected
 2026-06-24 12:36:10,764 No useremail to send to
+2026-06-24 12:41:11,000 Error sending email : Connection unexpectedly closed
+2026-06-24 12:41:11,066 Database connected succesfully
+2026-06-24 12:41:11,074 Building SSL context
+2026-06-24 12:41:11,125 Switching to SSL
+2026-06-24 12:41:11,148 SSL has been enabled
+2026-06-24 12:41:11,149 Starting authorization phase
+2026-06-24 12:41:11,149 The provided initial strategy is mysql_native_password
+2026-06-24 12:41:11,153 mysql_native_password completed succesfully
+2026-06-24 12:41:11,163 Weather database succesfully connected
+2026-06-24 12:41:11,164 No useremail to send to
